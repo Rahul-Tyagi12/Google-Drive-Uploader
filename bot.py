@@ -206,14 +206,7 @@ def UPLOAD(update, context):
             os.remove(filename[-1])
 
             ##########Uploading part  ###################
-        try:
-                    os.remove(filename)
-                except Exception as e:
-                    print(e)
-        except Exception as e:
-            print("Error code UXP12", e)
-            if DownloadStatus:
-                sent_message.edit_text("Uploading fail : {}".format(e))
+        
                 try:
                     os.remove(filename)
                 except Exception as e:
