@@ -207,12 +207,7 @@ def UPLOAD(update, context):
 
             ##########Uploading part  ###################
         
-                try:
-                    os.remove(filename)
-                except Exception as e:
-                    print("Error code UXP13", e)
-            else:
-                sent_message.edit_text("Uploading fail :", e)
+
 
     else:
         context.bot.send_message(
