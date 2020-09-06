@@ -207,24 +207,6 @@ def UPLOAD(update, context):
 
             ##########Uploading part  ###################
         try:
-
-            if DownloadStatus:
-                sent_message.edit_text(TEXT.UPLOADING)
-
-                SIZE = (os.path.getsize(filename))/1048576
-                SIZE = round(SIZE)
-                FILENAME = filename.split("/")[-1]
-                try:
-                    FILELINK = upload(filename, update,
-                                      context, TEXT.drive_folder_name)
-                except Exception as e:
-                    print("error Code : UPX11", e)
-                    sent_message.edit_text("Uploading fail :{}".format(e))
-
-                sent_message.edit_text(TEXT.DOWNLOAD_URL.format(
-                    FILENAME, SIZE, FILELINK), parse_mode=ParseMode.HTML)
-                print(filename)
-                try:
                     os.remove(filename)
                 except Exception as e:
                     print(e)
